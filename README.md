@@ -3,29 +3,30 @@
 A Retrieval-Augmented Generation (RAG) system that allows users to ask questions about the AWS Customer Agreement document.
 
 The system retrieves relevant document chunks using semantic search and generates answers using an LLM.
+<div align="center">
 
-
-                                                            AWS Agreement PDF
-                                                                   ↓
-                                                                 PyPDF
-                                                                   ↓
-                                                                Chunking
-                                                                   ↓
-                                                      SentenceTransformer (Embeddings)
-                                                                   ↓
-                                                               ChromaDB
-                                                                   ↓
-                                                               Retriever
-                                                                   ↓
-                                                            LLM (Groq/Grok)
-                                                                   ↓
-                                                                 Answer
-                                                                   ↓
-                                                                 SQLite
-                                                                   ↓
-                                                               Analytics
-
-
+  
+      AWS Agreement PDF
+            ↓
+          PyPDF
+            ↓
+         Chunking
+            ↓
+       SentenceTransformer (Embeddings)
+            ↓
+        ChromaDB
+            ↓
+        Retriever
+            ↓
+      LLM (Groq/Grok)
+            ↓
+          Answer
+            ↓
+         SQLite
+            ↓
+       Analytics
+  
+</div>
 
 Frontend:
 - Streamlit
