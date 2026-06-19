@@ -1,30 +1,18 @@
 import chromadb
-# from chunker import chunks
-# from embedding import vectors
-client = chromadb.PersistentClient(
-    path="chroma_db"
-)
 
-collection = client.get_or_create_collection(
-    "aws_docs"
-)
+def retrieve(question, top_k=5):
 
-# collection.add(
-#     ids=[str(i) for i in range(len(vectors))],
-#     documents=chunks,
-#     embeddings=vectors
-# )
+    client = chromadb.PersistentClient(
+        path="chroma_db"
+    )
 
-# print(collection.peek())
+    collection = client.get_collection(
+        "aws_docs"
+    )
 
-# results = collection.query(
-#     query_texts=[
-#         "Can AWS terminate my account?"
-#     ],
-#     n_results=3
-# )
+    results = collection.query(
+        query_texts=[question],
+        n_results=top_k
+    )
 
-# print(
-#     results["documents"][0]
-# )
-
+    return results["documents"][0]
